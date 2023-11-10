@@ -44,11 +44,12 @@ function newElement() {
   if (inputValue === "") {
     alert("You must write something!");
   } else {
-    document.getElementById("ulList").appendChild(li);  }
+    let list = document.getElementById("ulList");
+    list.insertBefore(li, list.childNodes[0]);  
+  }
   document.getElementById("myInput").value = "";
   let span = document.createElement("SPAN");
-  //   let delIcon = document.createElement("I");
-  //   delIcon.className = "fa-trash"
+
   let txt = document.createTextNode("Delete");
   span.className = "close";
   span.appendChild(txt);
